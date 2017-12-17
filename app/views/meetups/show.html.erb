@@ -1,0 +1,55 @@
+<div class="row">
+<div class="col-md-2">
+  <div>
+  <%= link_to("Back",meetups_path,class:"btn btn-default") %>
+</div>
+</div>
+  <div class="col-md-8">
+    <h3><%= @meetup.title %></h3>
+    <p><%=  @meetup.meetup_time  %></p>
+    <hr>
+    <p><%=  @meetup.description  %></p>
+  </div>
+</div>
+
+<div class="row" style="margin-top:40px; ">
+
+  <div class="col-md-8 col-md-offset-2" >
+  <h3>Replay</h3>
+<hr>
+    <table class="table">
+      <% count = 1  %>
+      <tbody>
+        <% @meetup.posts.order("Created_at ASC").each do |post| %>
+        <tr>
+          <td style="border-top: none; border-bottom: 1px solid #ddd;"> 
+          <div class="menta-data" style="text-align: right">
+            <%= count %> floor
+          </div>
+          <div>
+          <%= simple_format(post.content)  %> 
+          </div>
+          </td>
+
+          <% count+=1 %>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="col-md-4 col-md-offset-4">
+  <%= simple_form_for  Post.new do |f| %>
+  <div class="form-group">
+    <%= f.input :content,input_html: {class:"form-control"} %>
+  </div>
+  <div class="form-group">
+    <%= f.input :meetup_id ,:as => :hidden,:input_html => { :value => @meetup.id} %>
+  </div>
+  <div class="form-action">
+    <%= f.submit "Submit", disable_with: 'Submiting...', class: " btn btn-primary" %>
+  </div>
+  <% end %>
+  
+</div>

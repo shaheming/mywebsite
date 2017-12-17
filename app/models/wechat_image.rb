@@ -1,0 +1,3 @@
+class WechatImage < ApplicationRecord
+
+end

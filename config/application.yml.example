@@ -1,0 +1,19 @@
+ production:
+   qiniu_access_key: xxxx  # 你的 qiniu AccessKey
+
+   qiniu_secret_key: xxxx  # 你的 qiniu SecretKey
+
+   qiniu_bucket: xxxx  # 你的 qiniu bucket
+
+   qiniu_bucket_domain: xxxx  # 你的 qiniu bucket domain
+
+
+
+ development:
+   qiniu_access_key: xxxx  # 你的 qiniu AccessKey
+
+   qiniu_secret_key: xxxx  # 你的 qiniu SecretKey
+
+   qiniu_bucket: xxxx  # 你的 qiniu bucket
+
+   qiniu_bucket_domain: xxxx  # 你的 qiniu bucket domain

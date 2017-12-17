@@ -1,0 +1,26 @@
+<div class="col-md-12">
+  <h2 class="text-center"> Meetups List </h2>
+
+  <%= link_to("Create",new_meetup_path,class: "btn btn-default pull-right",) %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th> # </th>
+        <th> Title </th>
+        <th> Meetup Time </th>
+        <th> Option </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @meetups.each do |meetup| %>
+        <tr>
+          <td> # </td>
+        <td> <%= link_to(meetup.title,meetup_path(meetup)) %>  </td>
+        <td> <%= meetup.meetup_time %>  </td>
+        <td> <%= link_to("Edit",edit_meetup_path(meetup)) %> | <%= link_to("Delete",meetup_path(meetup),method: :delete,data:{confirm: "Are you sure?"}) %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

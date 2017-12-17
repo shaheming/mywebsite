@@ -1,0 +1,2 @@
+class TestTime < ApplicationRecord
+end

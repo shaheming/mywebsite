@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-1">
+    <% if @image.avatar? %>
+    <span>pic</span> <br>
+    <div class="image-group">
+      <!-- <%= image_tag(@image.avatar.thumb.url) %> -->
+    </div>
+    <div class="image-group">
+      <%= image_tag(@image.avatar.url) %>
+    </div>
+    <% end %>
+  </div>
+  <div class="col-md-2">
+    <%= link_to("create a new",new_admin_image_path,class:"btn btn-default") %>
+    
+  </div>
+</div>

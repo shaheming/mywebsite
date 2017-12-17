@@ -1,0 +1,8 @@
+zh-CN:
+  activerecord:
+    errors:
+    models:
+      meetup:
+        attributes:
+          meetup_time:
+            blank: "不能为空"

@@ -1,0 +1,25 @@
+<div class="col-md-12">
+  <h2 class="text-center"> Image </h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th> # </th>
+        <th> id </th>
+        <th> image </th>
+        <th> created_at </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% count = 1  %>
+      <% @images.each do |img| %>
+      <tr>
+        <td> # </td>
+        <td> <%= count %> </td>
+        <td> <%= link_to("img: #{count}",admin_wechat_path(img))  %> </td>
+        <td> <%= img.created_at.strftime('%Y-%m-%d %H:%M:%S') %>    </td>
+        <% count += 1  %>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
